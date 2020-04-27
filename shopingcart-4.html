@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>navbar</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        
+        /* style end for hamburger*/
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+        footer{
+           
+            width: 100%;
+            box-shadow: 0px -4px 2px -2px #F44336;
+        }
+        body
+        {
+            font-family: sans-serif;
+            
+        }
+        nav
+        {  
+            height: 16vh;
+            background:deeppink;
+            box-shadow: 0 4px 2px -2px #938787;
+            
+            width: 100%;
+            
+           
+        
+            
+            
+        }
+        .product::-webkit-scrollbar{
+            background: transparent;
+        }
+        .nav-links
+        {
+            display: flex;
+            list-style: none;
+            width: 50%;
+            background:deeppink;
+            height: 100%;
+            justify-content: space-around;
+            align-items: center;
+            margin-left: auto
+            
+        }
+        i{
+            color: #f1f1f1;
+            font-size: 25px;
+            font-weight: 600;
+            margin-right: 7px;
+        }
+        #ii:hover i{
+            transform: rotate(180deg);
+             
+        }
+        #ii:hover #sh{
+            display: block;
+        }
+        .nav-links li a
+        {
+            color: #f1f1f1;
+            text-decoration: none;
+            font-size: 17px;
+        }
+        .landing
+        {
+           min-height: 80vh;
+            padding: 10px;
+            
+            justify-content:center;
+            align-items: center;
+            
+                
+        }
+        .landing h1{
+            margin: 100px;
+            font-size: 50px;
+            color: deeppink
+        }
+        .landing p{font-size: 20px;
+            color: deeppink}
+        
+        @media screen and (max-width:768px){
+            .line{width: 30px;
+                 height: 3px;
+             background: #f1f1f1;
+                margin: 5px;
+            }
+            nav
+            {   height: 9vh;
+                position: relative;
+            }
+            .hamburger{
+                position: absolute;
+                cursor: pointer;
+                right: 5%;
+                top:50%;
+                transform: translate(-5%,-50%);
+                z-index: 2;
+            }
+            .nav-links{
+                position: fixed;
+                height: 100vh;
+                width: 100%;
+                flex-direction: column;
+                clip-path:circle(100px at 90% -20%);
+                -webkit-clip-path:circle(100px at 90% -20%);
+                transition: all 1s ease-out;
+                pointer-events: none
+                
+            }
+            .nav-links.open{
+                 clip-path:circle(1000px at 90% -20%);
+                -webkit-clip-path:circle(1000px at 90% -20%);
+                transition: all 0.2s linear;
+                pointer-events: all
+            }
+            .landing
+            {
+                flex-direction: column
+            }
+            .nav-links li
+            {
+                opacity: 0;
+            }
+            
+            .nav-links li:nth-child(1){
+                transition: all 0.5 ease 0.4s;
+            }
+            .nav-links li:nth-child(2){
+                transition: all 0.5 ease 0.5s;
+            }
+            .nav-links li:nth-child(3){
+                transition: all 0.5 ease 0.6s;
+            }
+            .nav-links li:nth-child(4){
+                transition: all 0.5 ease 0.8s;
+            }
+            li.fade{
+                opacity: 1
+            }
+        }
+        /* style end for hamburger*/
+        .card{width: 300px;
+        height:400px;
+            margin: 10px;
+        box-shadow: 2px 2px 4px 2px rgba(0,0,0,0.4),-2px -2px 4px 2px #9b9ef4}
+        .card img
+        {
+            width: 100%;
+            height: 70%;
+        }
+        .product-detail
+        {
+            background: rgba(0,0,0,0.8);
+            height: 30px;
+            height: 30%;
+            color: #f1f1f1;
+            text-shadow: 2px 2px 2px blue;
+            text-align: center;
+            padding: 10px;
+            min-width: 300px
+        }
+        .product-detail h2,p{
+            padding: 5px 3px;
+        }
+        .product{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            overflow:auto;
+            padding: 10px;
+            margin: 10px;
+            
+            
+        }
+        
+    #hhh
+        {
+        padding: 30px;
+        background:linear-gradient(160deg,yellow,purple);
+        color:red;
+        font-size: 30px;
+            margin:4px;
+            text-align: center;
+            border: 1px solid green;
+            animation: zoom 0.6s infinite alternate;
+            transition: all 0.4s linear;
+            text-shadow: 2px 2px 4px green;
+        
+        }
+        @keyframes zoom{
+            from{text-shadow: 2px 2px 4px blue;}
+        }
+        to{
+            text-shadow: 6px 7px 10px red
+        }
+        
+ @media screen and (max-width:600px)
+        {
+            .card{
+                height: 200px;
+                width: 150px
+            }
+            .product-detail{
+                min-width: 150px;
+                font-size: 10px;
+            }
+            .product
+            {
+                padding: 6px;
+                margin: 3px;
+            }
+        } 
+    </style>
+</head>
+<body>
+<nav>
+   
+    <div class="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+    <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Service</a></li>
+        <li id="ii"><i  class='fa fa-angle-up'></i><a href="#">Contact</a></li>
+       
+    </ul>
+    
+</nav>
+ <div class="wrapper">
+    <section class="product-wrapper">
+     <h2 id='hhh'>Electronic Products</h2>
+      <div class="product">
+          <img src="./img1.jpg">
+        <div class="card">
+            <img  src='https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'>
+            <div class="product-detail">
+                <h2>Title</h2>
+                <p>description</p>
+            </div>
+        </div>
+         <div class="card">
+            <img  src='https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'>
+            <div class="product-detail">
+                <h2>Title</h2>
+                <p>description</p>
+            </div>
+        </div>
+         <div class="card">
+            <img  src='https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'>
+            <div class="product-detail">
+                <h2>Title</h2>
+                <p>description</p>
+            </div>
+        </div>
+         <div class="card">
+            <img  src='https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'>
+            <div class="product-detail">
+                <h2>Title</h2>
+                <p>description</p>
+            </div>
+        </div>
+         <div class="card">
+            <img  src='https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'>
+            <div class="product-detail">
+                <h2>Title</h2>
+                <p>description</p>
+            </div>
+        </div>
+         <div class="card">
+            <img  src='https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'>
+            <div class="product-detail">
+                <h2>Title</h2>
+                <p>description</p>
+            </div>
+        </div>
+         <div class="card">
+            <img  src='https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'>
+            <div class="product-detail">
+                <h2>Title</h2>
+                <p>description</p>
+            </div>
+        </div>
+        
+      </div> 
+       
+     </section>
+     <section class="product-wrapper">
+     <h2 id='hhh'>Electronic Products</h2>
+      <div class="product">
+          <img src="./img1.jpg">
+        <div class="card">
+            <img  src='https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'>
+            <div class="product-detail">
+                <h2>Title</h2>
+                <p>description</p>
+            </div>
+        </div>
+         <div class="card">
+            <img  src='https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'>
+            <div class="product-detail">
+                <h2>Title</h2>
+                <p>description</p>
+            </div>
+        </div>
+         <div class="card">
+            <img  src='https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'>
+            <div class="product-detail">
+                <h2>Title</h2>
+                <p>description</p>
+            </div>
+        </div>
+         <div class="card">
+            <img  src='https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'>
+            <div class="product-detail">
+                <h2>Title</h2>
+                <p>description</p>
+            </div>
+        </div>
+         <div class="card">
+            <img  src='https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'>
+            <div class="product-detail">
+                <h2>Title</h2>
+                <p>description</p>
+            </div>
+        </div>
+         <div class="card">
+            <img  src='https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'>
+            <div class="product-detail">
+                <h2>Title</h2>
+                <p>description</p>
+            </div>
+        </div>
+         <div class="card">
+            <img  src='https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'>
+            <div class="product-detail">
+                <h2>Title</h2>
+                <p>description</p>
+            </div>
+        </div>
+        
+      </div> 
+       
+     </section>
+     
+      </div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+   const hamburger=document.querySelector('.hamburger');
+    const navLinks=document.querySelector('.nav-links');
+    const links=document.querySelectorAll('.nav-links li');
+    hamburger.addEventListener('click',function(){
+        navLinks.classList.toggle('open');
+        links.forEach(link=>{
+            link.classList.toggle('fade')
+        })
+    })
+   
+    
+    </script>
+</body>
+<footer style="">
+    <p style="text-align: center;padding: 40px 20px ;background: #000;color: deeppink;font-weight: 600;font-size:20px">copyright 2020</p>
+</footer>
+</html>
